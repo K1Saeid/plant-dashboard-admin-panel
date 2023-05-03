@@ -1,0 +1,230 @@
+:root{
+    --PrimaryColor: hsl(94,59%,35%);
+    --HoverColor: #bdf094;
+    --paleGreen: hsl(96,75%,89%);
+    --whiteColor:hsl(0,0%,100%);
+    --blackColor:hsl(0,0.6,30.8%);
+    --textColor:hsl(240,1%,48%);
+    --bgColor:hsl(220,10%,94%);
+    --greyColor:rgb(190,190,190);
+    --inputColor:hsl(330,12%,97%);
+    --itemCardColor:hsl(120,5%,88%);
+    --itemCardHover:hsl(120,27%,87%);
+  
+    /* Font and Typography */
+    --biggestFontsize:2.5rem;
+    --h1FontSize:1.5rem;
+    --h2FontSize:1.25rem;
+    --h3FontSize:1rem;
+    --normalFontSize:.938rem;
+    --smallFontSize:.813rem;
+    --smallestFontSize:.75rem;
+    --greyText:#808080;
+  }
+  
+  .listingSection{
+    flex-basis: 70%;
+
+    .heading{
+        justify-content: space-between;
+        width: 100%;
+        h1{
+        font-size: var(--h2FontSize); 
+        color:var(--blackColor);
+        font-weight: 700;
+        }
+
+        .btn{
+            border:1px solid transparent;
+        }
+        .btn:hover{
+            border:1px solid var(--PrimaryColor);
+
+        }   
+    }
+
+    .secContainer{
+        display: grid;
+        -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+        grid-template-columns: auto auto auto auto; 
+        gap: 2rem;
+        text-align: center;
+        margin-top: 1rem;
+        .singleItem{
+            position: relative;
+            align-items: center;
+            flex-direction: column;
+            padding: 0.5em;
+            border-radius: 10px;
+            background: var(--itemCardColor);
+            cursor: pointer;
+
+            &:hover{
+                background: var(--itemCardHover);
+                box-shadow: 0 2px 2px var(--inputColor);
+            }
+           
+            img{
+                width:80%;
+                height: 80%;
+                margin: auto;
+                display: block;
+                padding-bottom: 10px;
+
+                &:hover{
+                    transform:translateY(-10px);
+                }
+            }   
+           
+           
+            .icon{
+                position: absolute;
+                top:10px;
+                right:10px;
+                color:var(--PrimaryColor);
+            }
+            h3{
+                font-size: var(--h3FontSize);
+                color:var(--blackColor);
+                padding: 0rem 0 1rem;
+            }
+        }
+     } 
+     .sellers{
+        width:100%;
+        justify-content: space-between;
+        gap:1rem;
+        align-items: flex-start;
+        margin-top: 1rem;
+        .topSellers , .featureSellers{
+            .heading{
+                padding:1rem 0;
+
+                .btn{
+                    padding:.5rem 1rem;
+                }
+            }
+
+            .card{
+                padding:1rem 1.5rem;
+                border-radius: 1rem;
+                background: var(--whiteColor);
+                gap:1rem;
+                box-shadow: 0 2px 4px var(--inputColor);
+
+                .users{
+                    padding-right:1rem;
+                    border-right:2px solid var(--greyText);
+
+                    img{
+                        width:30px;
+                        height:30px;
+                        border-radius: 5%;
+                        object-fit: cover;
+                        border: 2px solid var(--inputColor);
+                        transition: .5s ease;
+                        &:hover{
+                            transform:translateY(-5px);
+                        }
+                    }
+                }
+
+                .cardText{
+                    span{
+                        color:var(--blackColor);
+                        font-weight: 500;
+
+                        small{
+                            font-style: 400;
+                            .date{
+                                margin-left:1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+      
+
+    }
+
+   // Media queries ============>
+   @media screen and (max-width: 1280px){
+     .secContainer{
+        grid-template-columns: auto auto auto !important; 
+        gap:1.5rem !important;
+     }
+   }
+
+   @media screen and (max-width: 990px){
+    .secContainer{
+        grid-template-columns: auto auto  !important; 
+        gap:1rem !important;
+     }
+    .listingSection{
+        .sellers{
+            .card{
+                flex-direction: column;
+            }
+        }
+    }
+
+   }
+   @media screen and (max-width: 918px){
+    .secContainer{
+        grid-template-columns: auto auto auto !important; 
+        gap:1rem !important;
+     }
+    .listingSection{
+        .singleItem{
+            width:100% !important;
+        }
+        
+    }
+        
+
+   }
+   @media screen and (max-width: 768px){
+    .listingSection{
+        .secContainer{
+            grid-template-columns: auto auto!important; 
+            gap:1rem !important;
+         }
+        .sellers{
+            flex-direction: column !important;
+            .card{
+                flex-direction: row !important;
+            }
+        }
+    }
+}
+   @media screen and (max-width: 490px){
+    .listingSection{
+        .secContainer{
+            grid-template-columns: auto auto!important; 
+            gap:1rem !important;
+         }
+        .sellers{
+            flex-direction: column !important;
+            .card{
+                flex-direction: row !important;
+            }
+        }
+    }
+   }
+    @media screen and (max-width: 410px){
+        .listingSection{
+            .secContainer{
+                grid-template-columns: auto !important; 
+                flex-direction: column;
+             }
+            .sellers{
+                flex-direction: column !important;
+                .card{
+                    flex-direction: row !important;
+                }
+            }
+        }
+
+   }
