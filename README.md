@@ -78,7 +78,9 @@ npm run build
 
 ## 📸 Screenshots
 
-(Add dashboard screenshots here)
+[Dashboard Screenshot](Screenshots/dashboardDesktop.png)
+[Dashboard Screenshot](Screenshots/dashboardTablet.png)
+[Dashboard Screenshot](Screenshots/dashboardMobile.png)
 
 ---
 
